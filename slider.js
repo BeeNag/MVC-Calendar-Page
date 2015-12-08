@@ -1,12 +1,12 @@
 var SliderMapView = (function initSliderMapView() {
 
-	 var showEvents = $('<div class="container"></div>');
+	var showEvents = $('<div class="container"></div>');
     $('body').append(showEvents);
     var viewRow = $('<div class="row"></div>');
     $('[class="container"]').append(viewRow);
     var title = $('<div class="col-xs-12 col-sm-12 col-md-12"></div>');
     $('[class="row"]').append(title);
-    var para = $('<p><label for="amount">November</label><input id="amount"></p>');
+    var para = $('<p><label for="amount">December</label><input id="amount"></p>');
     $('[class="col-xs-12 col-sm-12 col-md-12"]').append(para);
     var range = $('<div id="slider-range"></div>');
     $('[class="col-xs-12 col-sm-12 col-md-12"]').append(range);
