@@ -1,0 +1,62 @@
+@import url( http://fonts.googleapis.com/css?family=Montserrat );
+
+body{
+  background:rgb(0, 0, 255);
+}
+
+.calendar, th, td {
+  border: 2px solid black;
+  width: 14.2857143%;
+  font-family: 'Montserrat';
+}
+
+.calendar{
+  margin:40px auto;
+  width:100%;
+  padding:20px;
+  background:#f7f7f7;
+  border:1px solid #ccc;
+  color:rgb(0, 0, 0);
+  position:relative;
+}
+
+.calendar .day:hover{
+  background:rgb(0, 127, 114);
+  color:#f7f7f7;
+  box-shadow:inset 0 0 20px rgba(0,0,0,0.4);
+  text-shadow:1px 1px 2px rgba(0,0,0,0.4);
+}
+
+.day {
+  text-align: center;
+}
+
+.formDiv {
+	background:#f7f7f7; 
+	border: 2px solid black;
+	width: 50%;
+    position:absolute;
+    bottom: 200px;
+    left: 300px;
+    font-family: 'Montserrat';
+
+}
+
+.changeDiv {
+	background:#f7f7f7;
+	border: 2px solid black;
+	width: 50%;
+    position:absolute;
+    bottom: 200px;
+    left: 300px;
+    font-family: 'Montserrat';
+}
+
+.hide {
+	display: none;
+}
+
+.show {
+	display: inherit;
+}
+

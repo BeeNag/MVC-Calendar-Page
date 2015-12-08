@@ -1,0 +1,3 @@
+var CreateMap = (function initCreateMap() {
+	
+})();
