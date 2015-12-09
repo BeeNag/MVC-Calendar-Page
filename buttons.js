@@ -1,4 +1,4 @@
-var Buttons = (function () {
+var Buttons = (function initButtons() {
 
   function showCalendarView() {
     return $('[class="calendarView"]').removeClass('hide').addClass('show');
@@ -90,6 +90,7 @@ var Buttons = (function () {
     hideEventForm: hideEventForm,
     showEditForm: showEditForm,
     hideEditForm: hideEditForm,
+    addClickListenerToDayCells: addClickListenerToDayCells,
     addClickListenerToSaveButton: addClickListenerToSaveButton,
     addClickListenerToCancelButton: addClickListenerToCancelButton,
     addClickListenerToCloseButton: addClickListenerToCloseButton,
