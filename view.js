@@ -1,6 +1,4 @@
 var CalendarView = (function initCalendarView() {
-    var calendarDays = groupDaysIntoWeeks(Model.createDateArray());
-    var weekdays = Model.getDays(); 
     var dataRow;
        
     function renderTable() {
