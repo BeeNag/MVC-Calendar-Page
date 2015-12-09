@@ -10,4 +10,9 @@ var Storage = (function initStorage() {
         dateArray.forEach(element)
     }
 
+    return {
+        getEventStorage: getEventStorage,
+        createMegaStorageObject: createMegaStorageObject
+    }
+
 })();
