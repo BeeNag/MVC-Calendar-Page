@@ -8,6 +8,14 @@ var Buttons = (function () {
     return $('[class="calendarView"]').addClass('hide');
   }
 
+  function highlightDayCell() {
+    return $('[class="day"]').addClass('highlight');
+  }
+
+  function removeHighlightFromDayCell() {
+    return $('[class="day highlight"]').removeClass('highlight');
+  }
+
   function showEventForm() {
     return $('[class="formDiv hide"]').removeClass('hide').addClass('show');
   }
@@ -22,6 +30,13 @@ var Buttons = (function () {
 
   function hideEditForm() {
     return $('[class="changeDiv show"]').removeClass('show').addClass('hide');
+  }
+
+  function addClickListenerToDayCells() {
+    $().on('click', function (clickEvent) {
+      clickEvent.preventDefault();
+      callback();
+    })
   }
 
   function addClickListenerToSaveButton(selector, callback) {
@@ -69,6 +84,8 @@ var Buttons = (function () {
   return {
     showCalendarView: showCalendarView,
     hideCalendarView: hideCalendarView,
+    highlightDayCell: highlightDayCell,
+    removeHighlightFromDayCell: removeHighlightFromDayCell,
     showEventForm: showEventForm,
     hideEventForm: hideEventForm,
     showEditForm: showEditForm,
