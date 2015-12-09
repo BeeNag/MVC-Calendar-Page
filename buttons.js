@@ -67,6 +67,12 @@ var Buttons = (function () {
   }
 
   return {
+    showCalendarView: showCalendarView,
+    hideCalendarView: hideCalendarView,
+    showEventForm: showEventForm,
+    hideEventForm: hideEventForm,
+    showEditForm: showEditForm,
+    hideEditForm: hideEditForm,
     addClickListenerToSaveButton: addClickListenerToSaveButton,
     addClickListenerToCancelButton: addClickListenerToCancelButton,
     addClickListenerToCloseButton: addClickListenerToCloseButton,
