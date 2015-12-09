@@ -33,12 +33,12 @@ var EventForm = (function initEventForm() {
 	}
 
 	function createSaveButton() {
-		var firstButton = ('<button value="save" class="saveButton">Save</button>');
+		var firstButton = ('<button data-save-button value="save" class="saveButton">Save</button>');
 		return firstButton;
 	}
 
 	function createCancelButton() {
-		var secondButton = ('<button value="cancel" class="cancelButton">Cancel</button');
+		var secondButton = ('<button data-cancel-button value="cancel" class="cancelButton">Cancel</button');
 		return secondButton;
 	}
 

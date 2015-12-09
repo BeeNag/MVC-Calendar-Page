@@ -14,7 +14,7 @@ var CalendarView = (function initCalendarView() {
       $('[class="calendar"]').append(monthRow);
       $('[class="calendar"]').append(weekRow);
       $('[class="calendar"]').append(dayRow);
-      $('body').append('<button value="change" class="changeView">Change View</button>')
+      $('body').append('<button data-change-button value="change" class="changeView">Change View</button>')
     }
   
     function renderMonthRow(renderCalendarMonth) {
@@ -52,7 +52,7 @@ var CalendarView = (function initCalendarView() {
     }
 
     function renderDay(element) {
-      var dayCell = ('<td class="day" id="' + element + '">' + element + '</td>');
+      var dayCell = ('<td data-calendar-day="' + element + '" class="day" id="' + element + '">' + element + '</td>');
       return dayCell;
     }
 

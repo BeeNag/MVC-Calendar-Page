@@ -1,9 +1,8 @@
 
-    var newObject = {};
+    
     var prevId = 0;
     var prevTargetElement = 0;
-    var targetObject = {};
-    var eventFlow = false;
+    
 
     
 

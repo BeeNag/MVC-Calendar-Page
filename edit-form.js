@@ -35,17 +35,17 @@ var EditForm = (function initEditForm() {
 	}
 
 	function createCloseButton() {
-		var firstButton = ('<button value="close" class="closeButton">Close</button>');
+		var firstButton = ('<button data-close-button value="close" class="closeButton">Close</button>');
 		return firstButton;
 	}
 
 	function createEditButton() {
-		var secondButton = ('<button value="edit" class="editButton">Edit</button>');
+		var secondButton = ('<button data-close-button value="edit" class="editButton">Edit</button>');
 		return secondButton;
 	}
 
 	function createRemoveButton() {
-		var thirdButton = ('<button value="remove" class="removeButton">Remove</button>');
+		var thirdButton = ('<button data-remove-button value="remove" class="removeButton">Remove</button>');
 		return thirdButton;
 	}
 
