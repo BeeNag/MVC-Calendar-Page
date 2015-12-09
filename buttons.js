@@ -101,11 +101,6 @@ var Buttons = (function initButtons() {
 
 })
     
-    // var prevId = 0;
-    // var prevTargetElement = 0;
-    
-
-    
 
     // $('[class="month"]').on('click', '.day', function daySelector(event) {
     //       var targetElement = event.target;
