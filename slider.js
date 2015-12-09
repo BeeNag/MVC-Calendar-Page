@@ -1,4 +1,4 @@
-var SliderMapView = (function initSliderMapView() {
+var Slider = (function initSlider() {
 
 	var showEvents = $('<div class="container"></div>');
     $('body').append(showEvents);

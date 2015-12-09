@@ -1,0 +1,3 @@
+var mapView = (function initCreateMapView() {
+	
+})();
