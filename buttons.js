@@ -1,15 +1,17 @@
 var Buttons = (function initButtons() {
 
+  var calendarDay;
+
   function showCalendarView() {
-    return $('[class="calendarView"]').removeClass('hide').addClass('show');
+    return $('[class="calendarView"]').addClass('show').removeClass('hide');
   }
 
   function hideCalendarView() {
     return $('[class="calendarView"]').addClass('hide');
   }
 
-  function highlightDayCell() {
-    return $('[class="day"]').addClass('highlight');
+  function highlightDayCell(calendarDay) {
+    return $('[data-calendar-day="' + calendarDay + '"]').addClass('highlight');
   }
 
   function removeHighlightFromDayCell() {
@@ -17,26 +19,35 @@ var Buttons = (function initButtons() {
   }
 
   function showEventForm() {
-    return $('[class="formDiv hide"]').removeClass('hide').addClass('show');
+    return $('[id="blankform"]').addClass('show').removeClass('hide');
   }
 
   function hideEventForm() {
-    return $('[class="formDiv show"]').removeClass('show').addClass('hide');
+    return $('[id="blankform"]').addClass('hide').removeClass('show');
   }
 
   function showEditForm() {
-    return $('[class="changeDiv hide"]').removeClass('hide').addClass('show');
+    return $('[id="emptyForm"]').addClass('show').removeClass('hide');
   }
 
   function hideEditForm() {
-    return $('[class="changeDiv show"]').removeClass('show').addClass('hide');
+    return $('[id="emptyForm"]').addClass('hide').removeClass('show');
   }
 
-  function addClickListenerToDayCells() {
-    $().on('click', function (clickEvent) {
+  function addClickListenerToDayCells(selector, callback) {
+    $('body').on('click', '[' + selector + ']', function (clickEvent) {
       clickEvent.preventDefault();
-      callback();
-    })
+      calendarDay = $(this).attr(selector);
+      callback(calendarDay);
+    });
+  }
+
+  function getCalendarDay() {
+    return calendarDay;
+  } 
+
+  function setCurrentCalendarDay(currentCalendarDay) {
+    calendarDay = currentCalendarDay;
   }
 
   function addClickListenerToSaveButton(selector, callback) {
@@ -47,6 +58,13 @@ var Buttons = (function initButtons() {
   }
 
   function addClickListenerToCancelButton(selector, callback) {
+    $('body').on('click', '[' + selector + ']', function (clickEvent) {
+      clickEvent.preventDefault();
+      callback();
+    });
+  }
+
+  function addClickListenerToFindButton(selector, callback) {
     $('body').on('click', '[' + selector + ']', function (clickEvent) {
       clickEvent.preventDefault();
       callback();
@@ -91,15 +109,18 @@ var Buttons = (function initButtons() {
     showEditForm: showEditForm,
     hideEditForm: hideEditForm,
     addClickListenerToDayCells: addClickListenerToDayCells,
+    getCalendarDay: getCalendarDay,
+    setCurrentCalendarDay: setCurrentCalendarDay,
     addClickListenerToSaveButton: addClickListenerToSaveButton,
     addClickListenerToCancelButton: addClickListenerToCancelButton,
+    addClickListenerToFindButton: addClickListenerToFindButton,
     addClickListenerToCloseButton: addClickListenerToCloseButton,
     addClickListenerToEditButton: addClickListenerToEditButton,
     addClickListenerToRemoveButton: addClickListenerToRemoveButton,
     addClickListenerToChangeButton: addClickListenerToChangeButton
   }
 
-})
+})();
     
 
     // $('[class="month"]').on('click', '.day', function daySelector(event) {

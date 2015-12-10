@@ -10,7 +10,7 @@ var EditForm = (function initEditForm() {
 		var editButton = createEditButton();
 		var removeButton = createRemoveButton();
 		$('body').append(formContainer);
-		$('[class="changeDiv"]').append(editForm);
+		$('[id="emptyForm"]').append(editForm);
 		$('[class="editForm"]').append(dayHeader);
 		$('[class="editForm"]').append(subHeader);
 		$('[class="editForm"]').append(empty);

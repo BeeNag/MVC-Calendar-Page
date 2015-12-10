@@ -36,10 +36,9 @@ body{
 	border: 2px solid black;
 	width: 50%;
   position:absolute;
-  bottom: 200px;
+  bottom: 150px;
   left: 300px;
   font-family: 'Montserrat';
-
 }
 
 .changeDiv {
@@ -47,7 +46,7 @@ body{
 	border: 2px solid black;
 	width: 50%;
   position:absolute;
-  bottom: 200px;
+  bottom: 150px;
   left: 300px;
   font-family: 'Montserrat';
 }
@@ -60,10 +59,14 @@ body{
 }
 
 .hide {
-	display: none;
+  display: none;
 }
 
 .show {
-	display: inherit;
+  display: inherit;
+}
+
+#map {
+  height: 20vh;
 }
 

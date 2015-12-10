@@ -17,7 +17,7 @@ var Slider = (function initSlider() {
         max: 30,
         values: [1,30],
         slide: function(event, ui) {
-          $("#amount").val(ui.values[0] + "th - " + ui.values[1] + "th");
+          $("#amount").val(" " + ui.values[0] + "th - " + ui.values[1] + "th");
         }
       });
       $("#amount").val($("#slider-range").slider("values", 0) + "th - " + $("#slider-range").slider("values", 1) + "th");
