@@ -1,20 +1,47 @@
 var Storage = (function initStorage() {
 
-	var eventStorage = {};
+	var megaStorageObject = {};
 
-    function getEventStorage() {
-        return eventStorage;
+
+    function getMegaStorageObject() {
+        return megaStorageObject;
     }
 
-    function createMegaStorageObject(element) {
-        dateArray.forEach(element) {
-            eventStorage[element] = {text: '', longitude: null, latitude: null};
-        }
+    function createMegaStorageObject() {
+        getDateArray(12, 2015).forEach(function (element) {
+            megaStorageObject[element] = {text: '', longitude: null, latitude: null};
+        });
+    }
+
+    function setDayEventOfMegaStorageObject(textValue, day) {
+        getMegaStorageObject()[Buttons.getCalendarDay()].text = textValue;
+    }
+
+    function getDayEventFromMegaStorageObject() {
+        return {
+            'text': getMegaStorageObject()[Buttons.getCalendarDay()].text
+        };
+    }
+
+    function setLongLatOfMegaStorageObject(data, day) {
+       getMegaStorageObject()[Buttons.getCalendarDay()].longitude = data.result.longitude;
+       getMegaStorageObject()[Buttons.getCalendarDay()].latitude = data.result.latitude;
+    }
+
+    function getLongLatFromMegaStorageObject() {
+        return {
+            'lng': getMegaStorageObject()[Buttons.getCalendarDay()].longitude,
+            'lat': getMegaStorageObject()[Buttons.getCalendarDay()].latitude
+        };
     }
 
     return {
-        getEventStorage: getEventStorage,
-        createMegaStorageObject: createMegaStorageObject
+        getMegaStorageObject: getMegaStorageObject,
+        createMegaStorageObject: createMegaStorageObject,
+        setDayEventOfMegaStorageObject: setDayEventOfMegaStorageObject,
+        getDayEventFromMegaStorageObject: getDayEventFromMegaStorageObject,
+        setLongLatOfMegaStorageObject: setLongLatOfMegaStorageObject,
+        getLongLatFromMegaStorageObject: getLongLatFromMegaStorageObject
     }
 
 })();

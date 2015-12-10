@@ -15,9 +15,9 @@ var EventForm = (function initEventForm() {
 		$('[class="eventForm"]').append(dayHeader);
 		$('[class="eventForm"]').append(subHeader);
 		$('[class="eventForm"]').append(eventEntry);
-		$('[class="eventForm"]').append(insertMap);
 		$('[class="eventForm"]').append(saveButton);
 		$('[class="eventForm"]').append(cancelButton);
+		$('[class="eventForm"]').append(insertMap);
 		$('[class="eventForm"]').append(findButton);
 	}
 
@@ -41,7 +41,7 @@ var EventForm = (function initEventForm() {
 	}
 
 	function insertMap() {
-		var insertMap = ('<div class="map-container"><div id="map">' + Map.initMap() + '</div></div>')
+		var insertMap = ('<div class="map-container"><div id="map"></div></div>')
 		return insertMap;
 	}
 

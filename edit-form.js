@@ -20,8 +20,12 @@ var EditForm = (function initEditForm() {
 	}
 
 	function createDayHeader() {
-		var header = ('<h1 class="header">' + Model.convertMonthNumberToString(Model.getMonth()) + ' ' + Model.getYear() + '</h1>');
+		var header = ('<h1 class="header"></h1>');
 		return header;
+	}
+
+	function setDayHeaderText(day, month, year) {
+		$('[class="header"]').text(day + ' of ' + ' ' + Model.convertMonthNumberToString(Model.getMonth()) + ' ' + Model.getYear());
 	}
 
 	function createSubHeader() {
@@ -32,6 +36,10 @@ var EditForm = (function initEditForm() {
 	function createEmptyParagraph() {
 		var emptyParagraph = ('<p class="emptyParagraph"></p>');
 		return emptyParagraph;
+	}
+
+	function getEvent(textValue) {
+		$('[class="emptyParagraph"]').text(textValue);
 	}
 
 	function createCloseButton() {
@@ -52,8 +60,10 @@ var EditForm = (function initEditForm() {
 	return {
 		renderEditForm: renderEditForm,
 		createDayHeader: createDayHeader,
+		setDayHeaderText: setDayHeaderText,
 		createSubHeader: createSubHeader,
 		createEmptyParagraph: createEmptyParagraph,
+		getEvent: getEvent,
 		createCloseButton: createCloseButton,
 		createEditButton: createEditButton,
 		createRemoveButton: createRemoveButton

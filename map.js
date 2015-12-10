@@ -1,23 +1,29 @@
 var Map = (function initCreateMap() { 
 
 	var map;
+	var marker;
+
 	function initMap() {
 
-		  map = new google.maps.Map($('[id="map"]'), {
-		    zoom: 17,
-		    center: PostcodeRequest.getPostcode()
-		  });
+		map = new google.maps.Map(document.getElementById('map'), {
+		   zoom: 17,
+		   center: Storage.getLongLatFromMegaStorageObject()
+		});
+	}
 
-		  var marker = new google.maps.Marker({
-		    position: PostcodeRequest.getPostcode(),
+	function initMapMarker() {
+
+		marker = new google.maps.Marker({
+		    position: Storage.getLongLatFromMegaStorageObject(),
 		    map: map,
 		    title: 'Your Position'
-		  });
-		}
+		});
+	}
 
 	return {
-		initMap: initMap
-	}
+		initMap: initMap,
+		initMapMarker: initMapMarker
+	};
 
 
 })();

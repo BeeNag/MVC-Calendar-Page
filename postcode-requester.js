@@ -1,27 +1,31 @@
 var PostcodeRequest = (function initPostcodeRequest() {
 
-	var myLatLng = {lat: 51.5409673157405, lng: -0.177987762377016}; 
+	var myLatLng = {lat: 51.5409673157405, lng: -0.177987762377016};
+	var userInput; 
 
-	function getPostcode(postcode) {
+	function getPostcode(postcode, finished) {
 		var xhr = new XMLHttpRequest();
 	        xhr.open('GET', encodeURI('http://api.postcodes.io/postcodes/' + postcode + ''));
-	        xhr.onload = function() {
+	        xhr.onload = function isLoading() {
 			  if (xhr.status !== 200) {
 			    console.log('Not OK: ' + xhr.status);
 			    return;
 	}
 
 	    var data = JSON.parse(xhr.responseText);
-
-        myLatLng.lng = data.result.longitude;
-        myLatLng.lat = data.result.latitude; 
-        initMap(); 
+	    finished(null, data);
         };
         xhr.send();
         }
 
+    function getUserInput() {
+    	userInput = $('[id="postcode"]').val();
+    	return userInput;
+    }
+
 	return {
-		getPostcode:getPostcode
-	}
+		getPostcode: getPostcode,
+		getUserInput: getUserInput
+	};
 
 })();
